@@ -304,8 +304,161 @@
 
     <!-- フッター部 -->
     <footer id="footer">
-        <p><a href="#">メインブログのトップページへ戻る</a></p>
-        <p>&copy; 2026 Apple 製品についての紹介サイト. All Rights Reserved.</p>
+        <!-- 同意バナー（コンテンツを邪魔しない仕様） -->
+<div id="simple-cookie-banner" class="simple-cookie-banner" style="display: none;">
+  <div class="simple-cookie-content">
+    <p class="simple-cookie-text">
+      当サイトではCookie等を使用しています。詳細は
+      <a href="/entry/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC/" class="simple-cookie-link">プライバシーポリシー</a> や
+      <a href="/entry/%E8%A6%8F%E7%B4%84/" class="simple-cookie-link">サイトのご利用にあたって</a> をご確認ください。
+      データの収集および利用に同意いただけますか？
+    </p>
+    <div class="simple-cookie-buttons">
+      <button class="btn-simple btn-simple-reject" id="simple-consent-reject">同意しない</button>
+      <button class="btn-simple btn-simple-accept" id="simple-consent-accept">同意する</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* 画面下部に細い帯として固定（サイトの内容は透けて見え、そのまま読めます） */
+  .simple-cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(34, 34, 34, 0.95); /* ほんのり透けるダークグレー */
+    color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  .simple-cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  @media (min-width: 768px) {
+    .simple-cookie-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+  .simple-cookie-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .simple-cookie-link {
+    color: #38bdf8;
+    text-decoration: underline;
+  }
+  .simple-cookie-link:hover {
+    color: #7dd3fc;
+  }
+  .simple-cookie-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    justify-content: flex-end;
+  }
+  .btn-simple {
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .btn-simple-accept {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  .btn-simple-accept:hover { background-color: #0056b3; }
+  .btn-simple-reject {
+    background-color: #555555;
+    color: #ffffff;
+  }
+  .btn-simple-reject:hover { background-color: #333333; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // すでに選択済みの場合は表示しない（最初のみ表示するための判定）
+  if (localStorage.getItem('user-cookie-consent')) {
+    return;
+  }
+
+  // バナーを表示
+  const banner = document.getElementById('simple-cookie-banner');
+  if (banner) {
+    banner.style.display = 'block';
+  }
+
+  // 「同意する」ボタン
+  document.getElementById('simple-consent-accept').addEventListener('click', () => {
+    localStorage.setItem('user-cookie-consent', 'accepted');
+    banner.remove();
+  });
+
+  // 「同意しない」ボタン
+  document.getElementById('simple-consent-reject').addEventListener('click', () => {
+    // 確認ダイアログを表示
+    const result = confirm('本当にいいのですか？');
+    
+    if (result) {
+      // ユーザーが「OK」を押した場合、タブを閉じる
+      window.close();
+      
+      // ブラウザ制限で閉じられない場合の保険（真っ白にする）
+      setTimeout(() => {
+        window.location.href = 'about:blank';
+      }, 100);
+    }
+  });
+});
+</script>
+
+<!-- フッターメニューの作成 -->
+<div id="footer-menu">
+  | <a href="https://iphoneapple.hatenablog.com/">TOP</a> 
+  | <a href="https://hatenablog.com">iPhone</a> 
+  | <a href="https://iphoneapple.hatenablog.com/archive/category/Appleイベント">Appleイベント</a> 
+  | <a href="https://iphoneapple.hatenablog.com/archive/category">カテゴリー</a> 
+  | <a href="https://iphoneapple.hatenablog.com/entry/profile">運営者情報</a> 
+  | <a href="https://iphoneapple.hatenablog.com/entry/%E8%A6%8F%E7%B4%84">サイトのご利用にあたって</a> 
+  | <a href="https://iphoneapple.hatenablog.com/entry/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a> 
+
+  | <a href="https://iphoneapple.hatenablog.com/entry/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ</a> |
+</div>
+
+<!-- 見た目を整えるためのデザイン（CSS） -->
+<style>
+#footer-menu {
+  text-align: center; /* 文字を真ん中に寄せる */
+  padding: 15px 0;    /* 上下に少し余白を作る */
+  font-size: 14px;    /* 文字の大きさ */
+  color: #666;        /* 区切り線「|」の色 */
+}
+#footer-menu a {
+  color: #333;              /* リンクの文字色 */
+  text-decoration: none;    /* 下線を消す */
+  margin: 0 5px;            /* リンクの左右の隙間 */
+}
+#footer-menu a:hover {
+  text-decoration: underline; /* マウスを乗せた時に下線を出す */
+}
+</style>
+
     </footer>
 
 </div>
