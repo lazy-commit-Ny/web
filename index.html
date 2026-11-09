@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple 製品について 旧 iphoneappleのブログ</title>
+    <title>Apple 製品についての紹介サイト</title>
     <style>
-        /* ブログ指定の背景色 */
+        /* ブログ全体の背景色 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
             background-color: #EDDDBB;
@@ -34,7 +34,7 @@
             padding-top: 40px;
         }
 
-        /* 左側：メインエリア */
+        /* 左側：メインエリア（白地） */
         #main {
             flex: 1;
             background: #ffffff;
@@ -43,7 +43,7 @@
             box-shadow: 0 1px 4px rgba(0,0,0,0.05);
         }
 
-        /* メインエリア最上部のブログタイトル */
+        /* ブログタイトル */
         .main-entry-header {
             text-align: center;
             margin-bottom: 25px;
@@ -61,7 +61,7 @@
             margin: 0;
         }
 
-        /* ブログタイトル直下の免責事項テキスト */
+        /* 免責事項テキスト */
         .disclaimer-text {
             font-size: 14px;
             color: #666666;
@@ -69,7 +69,7 @@
             line-height: 1.6;
         }
 
-        /* 免責事項直下のお知らせ枠 */
+        /* お知らせ枠 */
         .announcement-box {
             background-color: #f9f9f9;
             border: 1px dashed #cccccc;
@@ -98,24 +98,34 @@
             display: inline-block;
         }
 
-        /* アフィリエイト広告エリア（下地を白にせず透過に設定） */
-        .affiliate-ad-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 35px;
-            background-color: transparent; /* 背景を白にしない指定 */
-            padding: 10px 0;
+        /* 記事の要約・目次フレーム（青枠） */
+        .entry-summary-box {
+            border: 2px solid #0056b3;
+            border-radius: 4px;
+            padding: 20px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
         }
-        
-        .ad-box {
-            width: 300px;
-            height: 250px;
-            background-color: transparent; /* 枠の背景も透過に設定 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+        .entry-summary-title {
+            text-align: center;
+            font-weight: bold;
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .entry-summary-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .entry-toc {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .entry-toc li {
+            margin-bottom: 5px;
         }
 
         /* セクション見出し */
@@ -125,6 +135,22 @@
             margin-top: 30px;
             margin-bottom: 15px;
             color: #111111;
+        }
+
+        /* 広告専用の独立したコンテナ（白地エリアの下、背景は透過＝ブログの土台色） */
+        .outside-ad-container {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+        }
+        .outside-ad-box {
+            width: 100%;
+            max-width: 700px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* 右側：サイドバー */
@@ -173,10 +199,6 @@
             #box2 {
                 width: 100%;
             }
-            .affiliate-ad-container {
-                flex-direction: column;
-                align-items: center;
-            }
         }
     </style>
 </head>
@@ -186,23 +208,23 @@
     <!-- 2カラムコンテンツ部 -->
     <div id="content">
         
-        <!-- 左側：メインコンテンツ -->
+        <!-- 左側：メインコンテンツ（白地エリア） -->
         <main id="main">
             
-            <!-- 1. ブログタイトル -->
+            <!-- ブログタイトルを変更 -->
             <div class="main-entry-header">
-                <h1 class="main-blog-title">Apple 製品について 旧 iphoneappleのブログ</h1>
-                <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いてしていきます。</p>
+                <h1 class="main-blog-title">Apple 製品についての紹介サイト</h1>
+                <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
             </div>
 
             <div class="entry-content">
                 
-                <!-- 2. 免責事項テキスト -->
+                <!-- 免責事項内の表記もサイト名に変更 -->
                 <div class="disclaimer-text">
-                    当ブログ「Apple 製品について（旧：iphoneappleのブログ）」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
+                    当サイト「Apple 製品についての紹介サイト」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
                 </div>
 
-                <!-- 3. お知らせ枠 -->
+                <!-- お知らせ枠 -->
                 <div class="announcement-box">
                     <div class="announcement-title">お知らせ</div>
                     
@@ -215,35 +237,27 @@
                     </div>
                 </div>
 
-                <!-- 4. アフィリエイト広告枠（お知らせの下・背景透過） -->
-                <div class="affiliate-ad-container">
-                    <div class="ad-box">
-                        <!-- ここに1つ目の広告コード（A8やもしも等）を挿入してください -->
-                    </div>
+                <!-- 人気記事記事紹介エリア -->
+                <h2 class="section-title">人気記事ランキング</h2>
+                
+                <div style="margin-bottom: 10px;">
+                    <span style="background-color: #dddddd; color: #333333; padding: 2px 6px; font-size: 11px; font-weight: bold; margin-right: 8px;">2026-11-04</span>
+                    <h3 style="font-size: 18px; display: inline; margin: 0;"><a href="#">iPhone買いました！</a></h3>
                 </div>
 
-                <!-- 通常の記事エリア -->
-                <h2 class="section-title">人気記事ランキング</h2>
-                <p>まずはここから！当ブログで特にアクセスの多い一押し記事です。</p>
-                <ol>
-                    <li>
-                        <strong>おすすめ記事のタイトル（1位）</strong>
-                        <p>記事の簡単な紹介文をここに入れます。</p>
-                    </li>
-                    <li>
-                        <strong>おすすめ記事のタイトル（2位）</strong>
-                        <p>記事の簡単な紹介文をここに入れます。</p>
-                    </li>
-                </ol>
-
-                <h2 class="section-title">本気のおすすめ愛用アイテム</h2>
-                <p>実際に使ってみて本当に良かったと感じる一押しのモノたちです。</p>
-                <ul>
-                    <li>
-                        <strong>おすすめ商品・サービスの名称</strong>
-                        <p>商品の特徴や、実際に使って感じたメリットをここに詳しく記入します。</p>
-                    </li>
-                </ul>
+                <!-- 【30秒でわかる記事の要約】フレーム（青枠） -->
+                <div class="entry-summary-box">
+                    <p class="entry-summary-title">【30秒でわかる記事の要約】</p>
+                    <p class="entry-summary-text">
+                        iPhone 17（無印）は、従来の標準モデルの常識を覆す進化を遂げました。最大の見どころは、ついに標準モデルにも搭載された<strong>「最大120HzのProMotionディスプレイ」</strong>です。画面サイズも6.3インチへ大型化し、最小ストレージが256GBに倍増。上位モデル譲りの滑らかな操作感と高コスパを両立した、今最も選ぶべき大本命モデルの魅力を徹底解説します。
+                    </p>
+                    <ul class="entry-toc">
+                        <li><a href="#">1. 筆者もついに新型iPhoneを購入！</a></li>
+                        <li><a href="#">2. 画面の滑らかさが進化：待望の120Hz対応へ</a></li>
+                        <li><a href="#">3. ディスプレイとデザイン：6.3インチへ大型化</a></li>
+                        <li><a href="#">4. 基本性能とコスパ：256GBスタートで価格維持</a></li>
+                    </ul>
+                </div>
 
             </div>
         </main>
@@ -281,10 +295,17 @@
 
     </div>
 
+    <!-- アフィリエイト広告エリア（メイン白地エリアの下、下地が白くない場所へ配置） -->
+    <div class="outside-ad-container">
+        <div class="outside-ad-box">
+            <!-- ここにアフィリエイト広告コード（A8やもしも等）を挿入してください -->
+        </div>
+    </div>
+
     <!-- フッター部 -->
     <footer id="footer">
         <p><a href="#">メインブログのトップページへ戻る</a></p>
-        <p>&copy; 2026 Apple 製品について 旧 iphoneappleのブログ. All Rights Reserved.</p>
+        <p>&copy; 2026 Apple 製品についての紹介サイト. All Rights Reserved.</p>
     </footer>
 
 </div>
