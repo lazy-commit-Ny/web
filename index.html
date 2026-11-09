@@ -3,114 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>おすすめアイテム＆人気記事ランキング</title>
+    <title>Apple 製品について 旧 iphoneappleのブログ</title>
     <style>
-        /* 1枚目の画像の雰囲気を保つ素朴なデザイン */
+        /* 実際のブログのデザインと色味を再現 */
         body {
-            font-family: "Times New Roman", YuMincho, "ヒラギノ明朝 ProN W3", serif;
-            background-color: #ffffff;
-            color: #000000;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            text-align: left;
-        }
-        
-        /* 画面全体をメインとサイドバーに分ける設定 */
-        #container {
-            max-width: 100%;
-            margin: 0;
-            background: #ffffff;
-        }
-
-        #content {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-        }
-
-        /* 左側のメインコンテンツ（75%） */
-        #main {
-            flex: 3;
-        }
-
-        /* 右側のサイドバー（25%） */
-        #box2 {
-            flex: 1;
-            min-width: 240px;
-            padding-top: 30px;
-        }
-
-        a {
-            color: #0000ee;
-            text-decoration: underline;
-        }
-
-        /* ヘッダー */
-        #blog-title {
-            margin-bottom: 30px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
-        }
-        #title {
-            font-size: 32px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-        }
-        #blog-description {
-            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            background-color: #f4eae1; /* 特徴的なベージュの背景色 */
             color: #333333;
-        }
-
-        /* 各セクション */
-        .entry {
-            margin-bottom: 40px;
-        }
-        .entry-title, .hatena-module-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 0;
-            margin-bottom: 15px;
-            border: none;
+            line-height: 1.7;
+            margin: 0;
             padding: 0;
         }
 
-        .entry-content, .hatena-module-body {
+        #container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #454545;
+            text-decoration: underline;
+        }
+
+        /* ブログヘッダー（はてなバーは無し） */
+        #blog-title {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+        }
+        #title {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #4d433a;
+        }
+        #title a {
+            color: #4d433a;
+            text-decoration: none;
+        }
+        #blog-description {
+            font-size: 13px;
+            color: #73685d;
+            margin: 0;
+        }
+
+        /* メインとサイドバーの2カラム配置 */
+        #content {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        /* 左側：メインエリア（白いカード風） */
+        #main {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        /* 右側：サイドバー */
+        #box2 {
+            width: 300px;
+            flex-shrink: 0;
+        }
+
+        /* 各記事・セクションの区切り */
+        .entry {
+            margin-bottom: 40px;
+        }
+        .entry-date {
+            font-size: 14px;
+            color: #888888;
+            margin-bottom: 8px;
+        }
+        .entry-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            color: #111111;
+        }
+
+        /* 【30秒でわかる記事の要約】風のお知らせ枠 */
+        .summary-box {
+            border: 2px solid #0056b3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #ffffff;
+        }
+        .summary-title {
+            color: #0056b3;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
             font-size: 16px;
         }
 
-        /* プロフィール欄の装飾なし設定 */
-        .hatena-module-profile {
-            margin-bottom: 30px;
+        /* サイドバーの白いモジュール */
+        .hatena-module {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
         }
-
-        /* リスト設定 */
-        ol, ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        li {
+        .hatena-module-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 0;
             margin-bottom: 15px;
+            color: #4d433a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hatena-module-title::before {
+            content: "●";
+            color: #8a6343;
+            font-size: 12px;
         }
 
         /* フッター */
         #footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            clear: both;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 13px;
+            color: #73685d;
         }
 
-        /* 画面が狭いときは縦並びにする */
+        /* レスポンシブ対応 */
         @media (max-width: 768px) {
             #content {
                 flex-direction: column;
-                gap: 20px;
             }
             #box2 {
                 width: 100%;
-                border-top: 1px dashed #ccc;
-                padding-top: 20px;
             }
         }
     </style>
@@ -120,8 +149,10 @@
 
     <!-- ブログヘッダー部 -->
     <header id="blog-title">
-        <h1 id="title">おすすめアイテム＆人気記事ランキング</h1>
-        <p id="blog-description">当ブログでよく読まれている人気記事と、本気でおすすめしたい愛用アイテムのまとめです。</p>
+        <div id="blog-title-inner">
+            <h1 id="title"><a href="#">Apple 製品について 旧 iphoneappleのブログ</a></h1>
+            <p id="blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
+        </div>
     </header>
 
     <!-- 2カラムコンテンツ部 -->
@@ -132,66 +163,44 @@
             
             <!-- お知らせ欄 -->
             <article class="entry">
-                <h2 class="entry-title">📢 お知らせ</h2>
+                <div class="entry-date">2026-11-09</div>
+                <h2 class="entry-title">おすすめアイテム＆人気記事ランキング</h2>
                 <div class="entry-content">
-                    <p style="color: #666; margin-bottom: 5px;">2026年11月9日</p>
-                    <p>ブログの更新情報や、読者の皆様へ向けた最新のアナウンスをここに掲載します（例：新企画のスタート、メンテナンスの予定など）。</p>
-                </div>
-            </article>
+                    
+                    <p>当ブログでよく読まれている人気記事と、本気でおすすめしたい愛用アイテムのまとめです。</p>
 
-            <!-- 今注目のイチオシ記事 -->
-            <article class="entry">
-                <h2 class="entry-title">✨ 今注目のイチオシ記事</h2>
-                <div class="entry-content">
-                    <p>今まさに話題を集めている記事や、リアルタイムで読んでほしい最新のトレンド・注目トピックです！</p>
-                    <p><strong>ここに今注目の記事タイトルを記入</strong></p>
-                    <p>この記事が今なぜ注目されているのか、今読むべき理由や見どころをここに書きます。季節のイベントネタや、最近新しく書いた渾身のレビュー記事などを配置するのにぴったりです。</p>
-                    <p><a href="#">この注目記事を読む</a></p>
-                </div>
-            </article>
+                    <!-- 要約風デザインの枠 -->
+                    <div class="summary-box">
+                        <div class="summary-title">【30秒でわかる記事の要約】</div>
+                        <p>ブログの更新情報や、読者の皆様へ向けた最新のアナウンスをここに掲載します。今注目のトピックや直近の成果などをスッキリまとめてお届けします！</p>
+                        <ul>
+                            <li><a href="#">当ブログのPVが開設から1ヶ月半で1182回を超えました🎉</a></li>
+                            <li><a href="#">PV1000達成！✨</a></li>
+                        </ul>
+                    </div>
 
-            <!-- 人気記事ランキング -->
-            <article class="entry">
-                <h2 class="entry-title">🏆 人気記事ランキング</h2>
-                <div class="entry-content">
+                    <h3 style="font-size: 18px; margin-top: 30px;">🏆 人気記事ランキング</h3>
                     <p>まずはここから！当ブログで特にアクセスの多い一押し記事です。</p>
                     <ol>
                         <li>
-                            <strong>おすすめ記事のタイトル（ここに1位の記事名を記入）</strong>
-                            <p>記事の簡単な紹介文をここに入れます。読者がクリックしたくなるような見どころを2〜3行で書くのがおすすめです。</p>
-                            <p><a href="#">この記事を読む</a></p>
+                            <strong>おすすめ記事のタイトル（1位）</strong>
+                            <p>記事の簡単な紹介文をここに入れます。</p>
                         </li>
                         <li>
-                            <strong>おすすめ記事のタイトル（ここに2位の記事名を記入）</strong>
-                            <p>記事の簡単な紹介文をここに入れます。どんな悩みが解決できる記事なのかをアピールすると効果的です。</p>
-                            <p><a href="#">この記事を読む</a></p>
-                        </li>
-                        <li>
-                            <strong>おすすめ記事のタイトル（ここに3位の記事名を記入）</strong>
-                            <p>記事の簡単な紹介文をここに入れます。他の記事とどこが違うのか、見どころをシンプルにまとめます。</p>
-                            <p><a href="#">この記事を読む</a></p>
+                            <strong>おすすめ記事のタイトル（2位）</strong>
+                            <p>記事の簡単な紹介文をここに入れます。</p>
                         </li>
                     </ol>
-                </div>
-            </article>
 
-            <!-- 本気のおすすめ愛用アイテム -->
-            <article class="entry">
-                <h2 class="entry-title">⭐ 本気のおすすめ愛用アイテム</h2>
-                <div class="entry-content">
+                    <h3 style="font-size: 18px; margin-top: 30px;">⭐ 本気のおすすめ愛用アイテム</h3>
                     <p>実際に使ってみて本当に良かったと感じる一押しのモノたちです。</p>
                     <ul>
                         <li>
-                            <strong>おすすめ商品・サービスの名称（1つ目）</strong>
-                            <p>商品の特徴や、実際に使って感じたメリットをここに詳しく記入します。記事内でレビューしている場合は、そのレビュー記事へのリンクを貼るのもおすすめです。</p>
-                            <p><a href="#">詳細を見る</a></p>
-                        </li>
-                        <li>
-                            <strong>おすすめ商品・サービスの名称（2つ目）</strong>
-                            <p>商品の特徴や、どんな人に向いているかをここに詳しく記入します。愛用しているからこそ分かるリアルな感想を入れると読者の参考になります。</p>
-                            <p><a href="#">詳細を見る</a></p>
+                            <strong>おすすめ商品・サービスの名称</strong>
+                            <p>商品の特徴や、実際に使って感じたメリットをここに詳しく記入します。</p>
                         </li>
                     </ul>
+
                 </div>
             </article>
 
@@ -200,13 +209,29 @@
         <!-- 右側：サイドバー -->
         <aside id="box2">
             
-            <!-- プロフィールモジュール -->
-            <div class="hatena-module hatena-module-profile">
-                <h2 class="hatena-module-title">👤 プロフィール</h2>
+            <!-- プロフィール -->
+            <div class="hatena-module">
+                <h2 class="hatena-module-title">プロフィール</h2>
                 <div class="hatena-module-body">
                     <p><strong>管理人：iphoneapple</strong></p>
                     <p>メインブログも運営しています。Apple製品などの情報を発信中！</p>
                     <p>🔗 <a href="https://iphoneapple.hatenablog.com/" target="_blank">iphoneapple.hatenablog.com</a></p>
+                </div>
+            </div>
+
+            <!-- アクセス数 -->
+            <div class="hatena-module">
+                <h2 class="hatena-module-title">アクセス数</h2>
+                <div class="hatena-module-body">
+                    <p>今日: 34<br>昨日: --<br>合計: 1,361</p>
+                </div>
+            </div>
+
+            <!-- 検索 -->
+            <div class="hatena-module">
+                <h2 class="hatena-module-title">検索</h2>
+                <div class="hatena-module-body">
+                    <input type="text" placeholder="記事を検索" style="width: 80%; padding: 4px;">
                 </div>
             </div>
             
@@ -217,7 +242,7 @@
     <!-- フッター部 -->
     <footer id="footer">
         <p><a href="#">メインブログのトップページへ戻る</a></p>
-        <p>&copy; 2026 ブログ名. All Rights Reserved.</p>
+        <p>&copy; 2026 Apple 製品について 旧 iphoneappleのブログ. All Rights Reserved.</p>
     </footer>
 
 </div>
