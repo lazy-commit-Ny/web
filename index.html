@@ -5,76 +5,453 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple 製品についての紹介サイト</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; background-color: #E8DCcc; color: #333; line-height: 1.7; margin: 0; }
-        #container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-        #content { display: flex; gap: 24px; padding-top: 40px; }
-        #main { flex: 1; background: #fff; border-radius: 12px; padding: 30px; }
-        #box2 { width: 300px; }
-        .hatena-module { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
-        #footer-menu { text-align: center; padding: 15px 0; font-size: 14px; color: #666; margin-top: 30px; border-top: 1px dashed rgba(0,0,0,0.1); }
-        #footer-menu a { color: #333; text-decoration: none; margin: 0 5px; }
-        .simple-cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(34,34,34,0.95); color: #fff; padding: 10px 20px; z-index: 99999; box-sizing: border-box; }
-        .simple-cookie-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .btn-simple { padding: 6px 16px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; }
-        .btn-simple-accept { background: #007bff; color: #fff; }
-        .btn-simple-reject { background: #555; color: #fff; }
+        /* ブログ全体の背景色を温かみのある優しいミルクティベージュに指定 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            background-color: #E8DCcc;
+            color: #333333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* 2カラムレイアウト */
+        #content {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        /* 左側：メインエリア（白地） */
+        #main {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        /* ブログタイトル */
+        .main-entry-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+        .main-blog-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #4d433a;
+        }
+        .main-blog-description {
+            font-size: 13px;
+            color: #73685d;
+            margin: 0;
+        }
+
+        /* 免責事項テキスト */
+        .disclaimer-text {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* お知らせ枠 */
+        .announcement-box {
+            background-color: #f9f9f9;
+            border: 1px dashed #cccccc;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        .announcement-title {
+            font-size: 12px;
+            color: #999999;
+            margin-bottom: 8px;
+        }
+        .announcement-item {
+            margin-bottom: 8px;
+        }
+        .announcement-item:last-child {
+            margin-bottom: 0;
+        }
+        .announcement-date {
+            background-color: #dddddd;
+            color: #333333;
+            padding: 2px 6px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+        /* 記事の要約・目次フレーム（青枠） */
+        .entry-summary-box {
+            border: 2px solid #0056b3;
+            border-radius: 4px;
+            padding: 20px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+        .entry-summary-title {
+            text-align: center;
+            font-weight: bold;
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .entry-summary-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .entry-toc {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        .entry-toc li {
+            margin-bottom: 5px;
+        }
+
+        /* セクション見出し */
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #111111;
+        }
+
+        /* 広告専用の独立したコンテナ */
+        .outside-ad-container {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+        }
+        .outside-ad-box {
+            width: 100%;
+            max-width: 700px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 右側：サイドバー */
+        #box2 {
+            width: 300px;
+            flex-shrink: 0;
+        }
+
+        /* サイドバーモジュール */
+        .hatena-module {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+        .hatena-module-title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #4d433a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hatena-module-title::before {
+            content: "●";
+            color: #8a6343;
+            font-size: 12px;
+        }
+
+        /* フッターメニューのスタイル */
+        #footer-menu {
+            text-align: center;
+            padding: 15px 0;
+            font-size: 14px;
+            color: #666;
+            margin-top: 40px;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        #footer-menu a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        #footer-menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* フッター通常エリア */
+        #footer {
+            text-align: center;
+            padding: 20px 20px 40px 20px;
+            font-size: 13px;
+            color: #73685d;
+        }
+
+        /* Cookie同意バナーのスタイル（画面下部に固定） */
+        .simple-cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(34, 34, 34, 0.95);
+            color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 99999;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        .simple-cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        @media (min-width: 768px) {
+            .simple-cookie-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+        .simple-cookie-text {
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+            flex-grow: 1;
+        }
+        .simple-cookie-link {
+            color: #38bdf8;
+            text-decoration: underline;
+        }
+        .simple-cookie-link:hover {
+            color: #7dd3fc;
+        }
+        .simple-cookie-buttons {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+            justify-content: flex-end;
+        }
+        .btn-simple {
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+        .btn-simple-accept {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+        .btn-simple-accept:hover { background-color: #0056b3; }
+        .btn-simple-reject {
+            background-color: #555555;
+            color: #ffffff;
+        }
+        .btn-simple-reject:hover { background-color: #333333; }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            #content {
+                flex-direction: column;
+            }
+            #box2 {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
 <div id="container">
+
+    <!-- 2カラムコンテンツ部 -->
     <div id="content">
+        
+        <!-- 左側：メインコンテンツ（白地エリア） -->
         <main id="main">
-            <h1>Apple 製品についての紹介サイト</h1>
-            <p>iPhone、Mac、iPadなどのApple製品情報ブログ。</p>
-        </main>
-        <div id="box2">
-            <div class="hatena-module">
-                <h2>プロフィール</h2>
-                <p>管理人：toukyo</p>
+            
+            <!-- ブログタイトル -->
+            <div class="main-entry-header">
+                <h1 class="main-blog-title">Apple 製品についての紹介サイト</h1>
+                <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
             </div>
+
+            <div class="entry-content">
+                
+                <!-- 免責事項テキスト -->
+                <div class="disclaimer-text">
+                    当サイト「Apple 製品についての紹介サイト」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
+                </div>
+
+                <!-- お知らせ枠 -->
+                <div class="announcement-box">
+                    <div class="announcement-title">お知らせ</div>
+                    
+                    <div class="announcement-item">
+                        <span class="announcement-date">2026/11/4</span> 当ブログのPVが開設してから1ヶ月半で1182回を超えました👏
+                    </div>
+                    
+                    <div class="announcement-item">
+                        <span class="announcement-date">2026/11/1</span> PV1000達成！👏
+                    </div>
+                </div>
+
+                <!-- 人気記事記事紹介エリア -->
+                <h2 class="section-title">人気記事ランキング</h2>
+                
+                <div style="margin-bottom: 10px;">
+                    <span style="background-color: #dddddd; color: #333333; padding: 2px 6px; font-size: 11px; font-weight: bold; margin-right: 8px;">2026-11-04</span>
+                    <h3 style="font-size: 18px; display: inline; margin: 0;"><a href="#">iPhone買いました！</a></h3>
+                </div>
+
+                <!-- 【30秒でわかる記事の要約】フレーム（青枠） -->
+                <div class="entry-summary-box">
+                    <p class="entry-summary-title">【30秒でわかる記事の要約】</p>
+                    <p class="entry-summary-text">
+                        iPhone 17（無印）は、従来の標準モデルの常識を覆す進化を遂げました。最大の見どころは、ついに標準モデルにも搭載された<strong>「最大120HzのProMotionディスプレイ」</strong>です。画面サイズも6.3インチへ大型化し、最小ストレージが256GBに倍増。上位モデル譲りの滑らかな操作感と高コスパを両立した、今最も選ぶべき大本命モデルの魅力を徹底解説します。
+                    </p>
+                    <ul class="entry-toc">
+                        <li><a href="#">1. 筆者もついに新型iPhoneを購入！</a></li>
+                        <li><a href="#">2. 画面の滑らかさが進化：待望の120Hz対応へ</a></li>
+                        <li><a href="#">3. ディスプレイとデザイン：6.3インチへ大型化</a></li>
+                        <li><a href="#">4. 基本性能とコスパ：256GBスタートで価格維持</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- 右側：サイドバー -->
+        <aside id="box2">
+            
+            <!-- プロフィール -->
+            <div class="hatena-module hatena-module-profile">
+                <h2 class="hatena-module-title">プロフィール</h2>
+                <div class="hatena-module-body">
+                    <p><strong>管理人：toukyo</strong></p>
+                    <p>メインブログも運営しています。Apple製品などの情報を発信中！</p>
+                    <p><a href="https://iphoneapple.hatenablog.com/" target="_blank">https://iphoneapple.hatenablog.com/</a></p>
+                </div>
+            </div>
+
+            <!-- アクセス数 -->
+            <div class="hatena-module hatena-module-entries-access">
+                <h2 class="hatena-module-title">アクセス数</h2>
+                <div class="hatena-module-body">
+                    <p>今日: 34<br>週間: 276<br>月間: 292<br>合計: 1,361</p>
+                </div>
+            </div>
+
+            <!-- 検索 -->
+            <div class="hatena-module hatena-module-search-box">
+                <h2 class="hatena-module-title">検索</h2>
+                <div class="hatena-module-body">
+                    <input type="text" placeholder="記事を検索" style="width: 85%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                </div>
+            </div>
+            
+        </aside>
+
+    </div>
+
+    <!-- アフィリエイト広告エリア（下地がベージュの部分に表示） -->
+    <div class="outside-ad-container">
+        <div class="outside-ad-box">
+            <!-- ここにアフィリエイト広告コード（A8やもしも等）を挿入してください -->
         </div>
     </div>
-    
+
+    <!-- フッターメニュー -->
     <div id="footer-menu">
         | <a href="https://iphoneapple.hatenablog.com/">TOP</a> 
         | <a href="https://hatenablog.com">iPhone</a> 
-        | <a href="https://iphoneapple.hatenablog.com/archive/category/Appleイベント">Appleイベント</a> 
-        | <a href="https://iphoneapple.hatenablog.com/archive/category">カテゴリー</a> 
-        | <a href="https://iphoneapple.hatenablog.com/entry/profile">運営者情報</a> 
-        | <a href="https://iphoneapple.hatenablog.com/entry/%E8%A6%8F%E7%B4%84">サイトのご利用にあたって</a> 
-        | <a href="https://iphoneapple.hatenablog.com/entry/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a> 
+        | <a href="https://hatenablog.com">Appleイベント</a> 
+        | <a href="https://hatenablog.com">カテゴリー</a> 
+        | <a href="https://hatenablog.com">運営者情報</a> 
+        | <a href="https://hatenablog.com">サイトのご利用にあたって</a> 
+        | <a href="https://hatenablog.com">プライバシーポリシー</a> 
 
-        | <a href="https://iphoneapple.hatenablog.com/entry/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ</a> |
+        | <a href="https://hatenablog.com">お問い合わせ</a> |
     </div>
 
-    <footer style="text-align: center; padding: 20px;">
+    <!-- フッター通常エリア -->
+    <footer id="footer">
         <p>&copy; 2026 Apple 製品についての紹介サイト. All Rights Reserved.</p>
     </footer>
 
+    <!-- Cookie同意バナー（最初のみ画面下部に固定表示） -->
     <div id="simple-cookie-banner" class="simple-cookie-banner" style="display: none;">
         <div class="simple-cookie-content">
-            <p style="font-size: 13px; margin: 0;">当サイトではCookie等を使用しています。詳細はプライバシーポリシーをご確認ください。</p>
-            <div>
+            <p class="simple-cookie-text">
+                当サイトではCookie等を使用しています。詳細は
+                <a href="https://hatenablog.com" class="simple-cookie-link">プライバシーポリシー</a> や
+                <a href="https://hatenablog.com" class="simple-cookie-link">サイトのご利用にあたって</a> をご確認ください。
+                データの収集および利用に同意いただけますか？
+            </p>
+            <div class="simple-cookie-buttons">
                 <button class="btn-simple btn-simple-reject" id="simple-consent-reject">同意しない</button>
                 <button class="btn-simple btn-simple-accept" id="simple-consent-accept">同意する</button>
             </div>
         </div>
     </div>
+
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    if (!localStorage.getItem('user-cookie-consent')) {
-        document.getElementById('simple-cookie-banner').style.display = 'block';
+    // すでに同意・不同意の選択済みの場合は表示しない
+    if (localStorage.getItem('user-cookie-consent')) {
+        return;
     }
+
+    // バナーを表示
+    const banner = document.getElementById('simple-cookie-banner');
+    if (banner) {
+        banner.style.display = 'block';
+    }
+
+    // 「同意する」ボタン
     document.getElementById('simple-consent-accept').addEventListener('click', () => {
         localStorage.setItem('user-cookie-consent', 'accepted');
-        document.getElementById('simple-cookie-banner').remove();
+        banner.remove();
     });
+
+    // 「同意しない」ボタン
     document.getElementById('simple-consent-reject').addEventListener('click', () => {
-        if (confirm('本当にいいのですか？')) {
+        const result = confirm('本当にいいのですか？');
+        if (result) {
             window.close();
-            setTimeout(() => { window.location.href = 'about:blank'; }, 100);
+            setTimeout(() => {
+                window.location.href = 'about:blank';
+            }, 100);
         }
     });
 });
