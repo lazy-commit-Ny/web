@@ -20,12 +20,32 @@
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            max-width: 400px;
+            width: 100%;
         }
         h1 {
             color: #333;
+            margin-bottom: 10px;
         }
         p {
             color: #666;
+            margin-bottom: 30px;
+        }
+        /* ボタンの見た目の設定 */
+        .link-button {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #24292e; /* GitHub風のクールなダークグレー */
+            color: white;
+            text-decoration: none; /* 下線を消す */
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        /* ボタンにマウスを乗せたときの効果 */
+        .link-button:hover {
+            background-color: #555;
+            transform: translateY(-2px); /* 少し上に浮き上がらせる */
         }
     </style>
 </head>
@@ -33,6 +53,11 @@
     <div class="container">
         <h1>Webつくるー へようこそ！</h1>
         <p>GitHub Pages を使ったWebサイトの公開に成功しました 🎉</p>
+        
+        <!-- 🔗 ここにボタンを配置しています -->
+        <a href="https://iphoneapple.hatenablog.com/" target="_blank" rel="noopener noreferrer" class="link-button">
+            公式サイトを見る
+        </a>
     </div>
 </body>
 </html>
