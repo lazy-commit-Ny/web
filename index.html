@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple 製品について 旧 iphoneappleのブログ</title>
     <style>
-        /* 実際のブログのデザインと色味を再現 */
+        /* ブログ指定の背景色を完全に反映 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-            background-color: #f4eae1; /* 特徴的なベージュの背景色 */
+            background-color: #EDDDBB; /* 指定カラーコード */
             color: #333333;
             line-height: 1.7;
             margin: 0;
@@ -26,10 +26,10 @@
             text-decoration: underline;
         }
 
-        /* ブログヘッダー（はてなバーは無し） */
+        /* ブログヘッダー部（はてなバー完全非表示） */
         #blog-title {
             text-align: center;
-            padding: 60px 20px 40px 20px;
+            padding: 50px 20px 30px 20px;
         }
         #title {
             font-size: 26px;
@@ -47,14 +47,14 @@
             margin: 0;
         }
 
-        /* メインとサイドバーの2カラム配置 */
+        /* 2カラムレイアウト */
         #content {
             display: flex;
             gap: 24px;
             align-items: flex-start;
         }
 
-        /* 左側：メインエリア（白いカード風） */
+        /* 左側：メインエリア（白カード風） */
         #main {
             flex: 1;
             background: #ffffff;
@@ -69,10 +69,7 @@
             flex-shrink: 0;
         }
 
-        /* 各記事・セクションの区切り */
-        .entry {
-            margin-bottom: 40px;
-        }
+        /* 記事の構成要素 */
         .entry-date {
             font-size: 14px;
             color: #888888;
@@ -85,7 +82,7 @@
             color: #111111;
         }
 
-        /* 【30秒でわかる記事の要約】風のお知らせ枠 */
+        /* 【30秒でわかる記事の要約】風のデザイン枠 */
         .summary-box {
             border: 2px solid #0056b3;
             border-radius: 8px;
@@ -101,7 +98,7 @@
             font-size: 16px;
         }
 
-        /* サイドバーの白いモジュール */
+        /* サイドバーモジュール（白角丸） */
         .hatena-module {
             background: #ffffff;
             border-radius: 8px;
@@ -133,7 +130,7 @@
             color: #73685d;
         }
 
-        /* レスポンシブ対応 */
+        /* レスポンシブ */
         @media (max-width: 768px) {
             #content {
                 flex-direction: column;
@@ -161,7 +158,6 @@
         <!-- 左側：メインコンテンツ -->
         <main id="main">
             
-            <!-- お知らせ欄 -->
             <article class="entry">
                 <div class="entry-date">2026-11-09</div>
                 <h2 class="entry-title">おすすめアイテム＆人気記事ランキング</h2>
@@ -174,8 +170,8 @@
                         <div class="summary-title">【30秒でわかる記事の要約】</div>
                         <p>ブログの更新情報や、読者の皆様へ向けた最新のアナウンスをここに掲載します。今注目のトピックや直近の成果などをスッキリまとめてお届けします！</p>
                         <ul>
-                            <li><a href="#">当ブログのPVが開設から1ヶ月半で1182回を超えました🎉</a></li>
-                            <li><a href="#">PV1000達成！✨</a></li>
+                            <li>当ブログのPVが開設から1ヶ月半で1182回を超えました🎉</li>
+                            <li>PV1000達成！✨</li>
                         </ul>
                     </div>
 
@@ -210,28 +206,28 @@
         <aside id="box2">
             
             <!-- プロフィール -->
-            <div class="hatena-module">
+            <div class="hatena-module hatena-module-profile">
                 <h2 class="hatena-module-title">プロフィール</h2>
                 <div class="hatena-module-body">
-                    <p><strong>管理人：iphoneapple</strong></p>
+                    <p><strong>管理人：toukyo</strong></p>
                     <p>メインブログも運営しています。Apple製品などの情報を発信中！</p>
-                    <p>🔗 <a href="https://iphoneapple.hatenablog.com/" target="_blank">iphoneapple.hatenablog.com</a></p>
+                    <p>🔗 <a href="https://hatenablog.com" target="_blank">://hatenablog.com</a></p>
                 </div>
             </div>
 
             <!-- アクセス数 -->
-            <div class="hatena-module">
+            <div class="hatena-module hatena-module-entries-access">
                 <h2 class="hatena-module-title">アクセス数</h2>
                 <div class="hatena-module-body">
-                    <p>今日: 34<br>昨日: --<br>合計: 1,361</p>
+                    <p>今日: 34<br>週間: 276<br>月間: 292<br>合計: 1,361</p>
                 </div>
             </div>
 
             <!-- 検索 -->
-            <div class="hatena-module">
+            <div class="hatena-module hatena-module-search-box">
                 <h2 class="hatena-module-title">検索</h2>
                 <div class="hatena-module-body">
-                    <input type="text" placeholder="記事を検索" style="width: 80%; padding: 4px;">
+                    <input type="text" placeholder="記事を検索" style="width: 85%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
                 </div>
             </div>
             
