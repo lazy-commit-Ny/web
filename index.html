@@ -54,13 +54,50 @@
             align-items: flex-start;
         }
 
-        /* 左側：メインエリア（はてなブログ標準の丸み4px） */
+        /* 左側：メインエリア */
         #main {
             flex: 1;
             background: #ffffff;
-            border-radius: 4px;
+            border-radius: 12px;
             padding: 30px;
             box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        /* 免責事項テキストのスタイル */
+        .disclaimer-text {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        /* 実際のおしらせ枠のスタイル（背景薄グレー・ドット線） */
+        .announcement-box {
+            background-color: #f9f9f9;
+            border: 1px dashed #cccccc;
+            padding: 15px 20px;
+            margin-bottom: 35px;
+            font-size: 14px;
+        }
+        .announcement-title {
+            font-size: 12px;
+            color: #999999;
+            margin-bottom: 8px;
+        }
+        .announcement-item {
+            margin-bottom: 8px;
+        }
+        .announcement-item:last-child {
+            margin-bottom: 0;
+        }
+        .announcement-date {
+            background-color: #dddddd;
+            color: #333333;
+            padding: 2px 6px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 8px;
+            display: inline-block;
         }
 
         /* 右側：サイドバー */
@@ -77,10 +114,10 @@
             color: #111111;
         }
 
-        /* サイドバーモジュール（はてなブログ標準の丸み4px） */
+        /* サイドバーモジュール */
         .hatena-module {
             background: #ffffff;
-            border-radius: 4px;
+            border-radius: 12px;
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 1px 4px rgba(0,0,0,0.05);
@@ -141,9 +178,25 @@
                 <h2 class="entry-title">おすすめアイテム＆人気記事ランキング</h2>
                 <div class="entry-content">
                     
-                    <p>当ブログでよく読まれている人気記事と、本気でおすすめしたい愛用アイテムのまとめです。</p>
+                    <!-- 1. 免責事項テキストの再現 -->
+                    <div class="disclaimer-text">
+                        当ブログ「Apple 製品について（旧：iphoneappleのブログ）」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
+                    </div>
 
-                    <h3 style="font-size: 18px; margin-top: 30px;">🏆 人気記事ランキング</h3>
+                    <!-- 2. お知らせ枠の再現（画像通りの文章と色合い） -->
+                    <div class="announcement-box">
+                        <div class="announcement-title">お知らせ</div>
+                        
+                        <div class="announcement-item">
+                            <span class="announcement-date">2026/11/4</span> 当ブログのPVが開設してから1ヶ月半で1182回を超えました👏
+                        </div>
+                        
+                        <div class="announcement-item">
+                            <span class="announcement-date">2026/11/1</span> PV1000達成！👏
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 18px; margin-top: 30px;">人気記事ランキング</h3>
                     <p>まずはここから！当ブログで特にアクセスの多い一押し記事です。</p>
                     <ol>
                         <li>
@@ -156,7 +209,7 @@
                         </li>
                     </ol>
 
-                    <h3 style="font-size: 18px; margin-top: 30px;">⭐ 本気のおすすめ愛用アイテム</h3>
+                    <h3 style="font-size: 18px; margin-top: 30px;">本気のおすすめ愛用アイテム</h3>
                     <p>実際に使ってみて本当に良かったと感じる一押しのモノたちです。</p>
                     <ul>
                         <li>
@@ -179,7 +232,7 @@
                 <div class="hatena-module-body">
                     <p><strong>管理人：toukyo</strong></p>
                     <p>メインブログも運営しています。Apple製品などの情報を発信中！</p>
-                    <p><a href="https://hatenablog.com" target="_blank">https://hatenablog.com</a></p>
+                    <p><a href="https://iphoneapple.hatenablog.com/" target="_blank">https://iphoneapple.hatenablog.com/</a></p>
                 </div>
             </div>
 
