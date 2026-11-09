@@ -4,9 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>おすすめアイテム＆人気記事ランキング</title>
-    
-    <!-- 【最重要】ご自身のメインブログのデザイン（CSS）を強制的に読み込むコード -->
-    <link rel="stylesheet" href="https://github.io">
+    <style>
+        /* ブログ全体の設定 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Segoe UI Emoji", sans-serif;
+            background-color: #f7f7f7;
+            color: #333333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        a {
+            color: #454545;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #000000;
+        }
+
+        /* ヘッダー */
+        #blog-title {
+            padding: 50px 20px 30px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        #title a {
+            font-size: 28px;
+            font-weight: bold;
+            color: #111111;
+            text-decoration: none;
+        }
+        #blog-description {
+            font-size: 14px;
+            color: #666666;
+            margin-top: 10px;
+        }
+
+        /* メインコンテンツ */
+        #content {
+            padding: 40px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .entry {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px dashed #e5e5e5;
+        }
+        .entry:last-child {
+            border-bottom: none;
+        }
+        .entry-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #111111;
+            margin-bottom: 20px;
+            border-left: 4px solid #333;
+            padding-left: 12px;
+        }
+
+        /* イチオシ記事ボックス */
+        .featured-box {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px dashed #cccccc;
+            background-color: #fafafa;
+            border-radius: 4px;
+        }
+        .featured-box h3, .ranking-item h3, .recommend-item h3 {
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #111111;
+        }
+
+        /* ランキング・リスト */
+        ol, ul {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+        .ranking-item, .recommend-item {
+            margin-bottom: 30px;
+            list-style-position: inside;
+        }
+        .rank-badge {
+            display: inline-block;
+            background: #333333;
+            color: #ffffff;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-bottom: 8px;
+        }
+        .item-content {
+            padding-left: 5px;
+            margin-top: 5px;
+        }
+
+        /* フッター */
+        #footer {
+            background: #fafafa;
+            padding: 40px 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 13px;
+            color: #777777;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <div id="container">
@@ -20,123 +136,103 @@
     </header>
 
     <!-- メインコンテンツ部 -->
-    <div id="content" class="container">
+    <div id="content">
         <div id="content-inner">
-            <div id="wrapper">
-                <main id="main" role="main">
-                    <div id="main-inner">
+            <main id="main" role="main">
+                <div id="main-inner">
 
-                        <!-- お知らせ欄 -->
-                        <article class="entry hentry">
-                            <div class="entry-inner">
-                                <header class="entry-header">
-                                    <h2 class="entry-title">📢 お知らせ</h2>
-                                    <div class="entry-date" style="font-size: 0.85em; color: #666; margin-bottom: 10px;">
-                                        <time datetime="2026-11-09">2026年11月9日</time>
+                    <!-- お知らせ欄 -->
+                    <article class="entry">
+                        <h2 class="entry-title">📢 お知らせ</h2>
+                        <div class="entry-content">
+                            <p style="font-size: 0.85em; color: #777; margin-bottom: 8px;">2026年11月9日</p>
+                            <p>ブログの更新情報や、読者の皆様へ向けた最新のアナウンスをここに掲載します（例：新企画のスタート、メンテナンスの予定など）。</p>
+                        </div>
+                    </article>
+
+                    <!-- 今注目のイチオシ記事 -->
+                    <article class="entry">
+                        <h2 class="entry-title">✨ 今注目のイチオシ記事</h2>
+                        <div class="entry-content">
+                            <p>今まさに話題を集めている記事や、リアルタイムで読んでほしい最新のトレンド・注目トピックです！</p>
+                            
+                            <div class="featured-box">
+                                <h3>ここに今注目の記事タイトルを記入</h3>
+                                <p>この記事が今なぜ注目されているのか、今読むべき理由や見どころをここに書きます。季節のイベントネタや、最近新しく書いた渾身のレビュー記事などを配置するのにぴったりです。</p>
+                                <p><a href="#">この注目記事を読む</a></p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 人気記事ランキング -->
+                    <article class="entry">
+                        <h2 class="entry-title">🏆 人気記事ランキング</h2>
+                        <div class="entry-content">
+                            <p>まずはここから！当ブログで特にアクセスの多い一押し記事です。</p>
+
+                            <ol style="list-style-type: none; padding-left: 0;">
+                                <li class="ranking-item">
+                                    <span class="rank-badge">第1位</span>
+                                    <div class="item-content">
+                                        <h3>おすすめ記事のタイトル（ここに1位の記事名を記入）</h3>
+                                        <p>記事の簡単な紹介文をここに入れます。読者がクリックしたくなるような見どころを2〜3行で書くのがおすすめです。</p>
+                                        <p><a href="#">この記事を読む</a></p>
                                     </div>
-                                </header>
-                                <div class="entry-content">
-                                    <p>ブログの更新情報や、読者の皆様へ向けた最新のアナウンスをここに掲載します（例：新企画のスタート、メンテナンスの予定など）。</p>
-                                </div>
-                            </div>
-                        </article>
+                                </li>
 
-                        <!-- 今注目のイチオシ記事 -->
-                        <article class="entry hentry">
-                            <div class="entry-inner">
-                                <header class="entry-header">
-                                    <h2 class="entry-title">✨ 今注目のイチオシ記事</h2>
-                                </header>
-                                <div class="entry-content">
-                                    <p>今まさに話題を集めている記事や、リアルタイムで読んでほしい最新のトレンド・注目トピックです！</p>
-                                    
-                                    <div style="margin-top: 2em; padding: 15px; border: 1px dashed #ccc;">
-                                        <h3>ここに今注目の記事タイトルを記入</h3>
-                                        <p>この記事が今なぜ注目されているのか、今読むべき理由や見どころをここに書きます。季節のイベントネタや、最近新しく書いた渾身のレビュー記事などを配置するのにぴったりです。</p>
-                                        <p><a href="https://example.com">この注目記事を読む</a></p>
+                                <li class="ranking-item">
+                                    <span class="rank-badge">第2位</span>
+                                    <div class="item-content">
+                                        <h3>おすすめ記事のタイトル（ここに2位の記事名を記入）</h3>
+                                        <p>記事の簡単な紹介文をここに入れます。どんな悩みが解決できる記事なのかをアピールすると効果的です。</p>
+                                        <p><a href="#">この記事を読む</a></p>
                                     </div>
-                                </div>
-                            </div>
-                        </article>
+                                </li>
 
-                        <!-- 人気記事ランキング -->
-                        <article class="entry hentry">
-                            <div class="entry-inner">
-                                <header class="entry-header">
-                                    <h2 class="entry-title">🏆 人気記事ランキング</h2>
-                                </header>
-                                <div class="entry-content">
-                                    <p>まずはここから！当ブログで特にアクセスの多い一押し記事です。</p>
+                                <li class="ranking-item">
+                                    <span class="rank-badge">第3位</span>
+                                    <div class="item-content">
+                                        <h3>おすすめ記事のタイトル（ここに3位の記事名を記入）</h3>
+                                        <p>記事の簡単な紹介文をここに入れます。他の記事とどこが違うのか、見どころをシンプルにまとめます。</p>
+                                        <p><a href="#">この記事を読む</a></p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </article>
 
-                                    <ol style="padding-left: 20px; margin-top: 1.5em;">
-                                        <li style="margin-bottom: 2em;">
-                                            <strong>第1位</strong>
-                                            <div style="margin-top: 0.5em;">
-                                                <h3>おすすめ記事のタイトル（ここに1位の記事名を記入）</h3>
-                                                <p>記事の簡単な紹介文をここに入れます。読者がクリックしたくなるような見どころを2〜3行で書くのがおすすめです。</p>
-                                                <p><a href="https://example.com">この記事を読む</a></p>
-                                            </div>
-                                        </li>
+                    <!-- 本気のおすすめ愛用アイテム -->
+                    <article class="entry">
+                        <h2 class="entry-title">⭐ 本気のおすすめ愛用アイテム</h2>
+                        <div class="entry-content">
+                            <p>実際に使ってみて本当に良かったと感じる一押しのモノたちです。</p>
 
-                                        <li style="margin-bottom: 2em;">
-                                            <strong>第2位</strong>
-                                            <div style="margin-top: 0.5em;">
-                                                <h3>おすすめ記事のタイトル（ここに2位の記事名を記入）</h3>
-                                                <p>記事の簡単な紹介文をここに入れます。どんな悩みが解決できる記事なのかをアピールすると効果的です。</p>
-                                                <p><a href="https://example.com">この記事を読む</a></p>
-                                            </div>
-                                        </li>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li class="recommend-item" style="border-bottom: 1px solid #eee; padding-bottom: 20px;">
+                                    <h3>おすすめ商品・サービスの名称（1つ目）</h3>
+                                    <p>商品の特徴や、実際に使って感じたメリットをここに詳しく記入します。記事内でレビューしている場合は、そのレビュー記事へのリンクを貼るのもおすすめです。</p>
+                                    <p><a href="#">詳細を見る</a></p>
+                                </li>
 
-                                        <li style="margin-bottom: 2em;">
-                                            <strong>第3位</strong>
-                                            <div style="margin-top: 0.5em;">
-                                                <h3>おすすめ記事のタイトル（ここに3位の記事名を記入）</h3>
-                                                <p>記事の簡単な紹介文をここに入れます。他の記事とどこが違うのか、見どころをシンプルにまとめます。</p>
-                                                <p><a href="https://example.com">この記事を読む</a></p>
-                                            </div>
-                                        </li> Granger
-                                    </ol>
-                                </div>
-                            </div>
-                        </article>
+                                <li class="recommend-item" style="padding-top: 10px;">
+                                    <h3>おすすめ商品・サービスの名称（2つ目）</h3>
+                                    <p>商品の特徴や、どんな人に向いているかをここに詳しく記入します。愛用しているからこそ分かるリアルな感想を入れると読者の参考になります。</p>
+                                    <p><a href="#">詳細を見る</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
 
-                        <!-- 本気のおすすめ愛用アイテム -->
-                        <article class="entry hentry">
-                            <div class="entry-inner">
-                                <header class="entry-header">
-                                    <h2 class="entry-title">⭐ 本気のおすすめ愛用アイテム</h2>
-                                </header>
-                                <div class="entry-content">
-                                    <p>実際に使ってみて本当に良かったと感じる一押しのモノたちです。</p>
-
-                                    <ul style="list-style-type: none; padding-left: 0; margin-top: 1.5em;">
-                                        <li style="margin-bottom: 2em; border-bottom: 1px solid #eee; padding-bottom: 1.5em;">
-                                            <h3>おすすめ商品・サービスの名称（1つ目）</h3>
-                                            <p>商品の特徴や、実際に使って感じたメリットをここに詳しく記入します。記事内でレビューしている場合は、そのレビュー記事へのリンクを貼るのもおすすめです。</p>
-                                            <p><a href="https://example.com">詳細を見る</a></p>
-                                        </li>
-
-                                        <li style="margin-bottom: 2em; padding-bottom: 1.5em;">
-                                            <h3>おすすめ商品・サービスの名称（2つ目）</h3>
-                                            <p>商品の特徴や、どんな人に向いているかをここに詳しく記入します。愛用しているからこそ分かるリアルな感想を入れると読者の参考になります。</p>
-                                            <p><a href="https://example.com">詳細を見る</a></p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </article>
-
-                    </div>
-                </main>
-            </div>
+                </div>
+            </main>
         </div>
     </div>
 
     <!-- フッター部 -->
     <footer id="footer">
         <div id="footer-inner">
-            <p style="text-align: center; margin: 2em 0;"><a href="https://example.com">メインブログのトップページへ戻る</a></p>
-            <p style="text-align: center; font-size: 0.8em;">&copy; 2026 ブログ名. All Rights Reserved.</p>
+            <p><a href="#" class="back-link">メインブログのトップページへ戻る</a></p>
+            <p>&copy; 2026 ブログ名. All Rights Reserved.</p>
         </div>
     </footer>
 
