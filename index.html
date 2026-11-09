@@ -74,7 +74,7 @@
             background-color: #f9f9f9;
             border: 1px dashed #cccccc;
             padding: 15px 20px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             font-size: 14px;
         }
         .announcement-title {
@@ -96,6 +96,26 @@
             font-weight: bold;
             margin-right: 8px;
             display: inline-block;
+        }
+
+        /* アフィリエイト広告エリア（下地を白にせず透過に設定） */
+        .affiliate-ad-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            background-color: transparent; /* 背景を白にしない指定 */
+            padding: 10px 0;
+        }
+        
+        .ad-box {
+            width: 300px;
+            height: 250px;
+            background-color: transparent; /* 枠の背景も透過に設定 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
         /* セクション見出し */
@@ -153,6 +173,10 @@
             #box2 {
                 width: 100%;
             }
+            .affiliate-ad-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -168,12 +192,12 @@
             <!-- 1. ブログタイトル -->
             <div class="main-entry-header">
                 <h1 class="main-blog-title">Apple 製品について 旧 iphoneappleのブログ</h1>
-                <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
+                <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いてしていきます。</p>
             </div>
 
             <div class="entry-content">
                 
-                <!-- 2. 【日本語に修正完了】免責事項テキスト -->
+                <!-- 2. 免責事項テキスト -->
                 <div class="disclaimer-text">
                     当ブログ「Apple 製品について（旧：iphoneappleのブログ）」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
                 </div>
@@ -188,6 +212,13 @@
                     
                     <div class="announcement-item">
                         <span class="announcement-date">2026/11/1</span> PV1000達成！👏
+                    </div>
+                </div>
+
+                <!-- 4. アフィリエイト広告枠（お知らせの下・背景透過） -->
+                <div class="affiliate-ad-container">
+                    <div class="ad-box">
+                        <!-- ここに1つ目の広告コード（A8やもしも等）を挿入してください -->
                     </div>
                 </div>
 
