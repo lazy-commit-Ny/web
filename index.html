@@ -26,32 +26,12 @@
             text-decoration: underline;
         }
 
-        /* ブログヘッダー部 */
-        #blog-title {
-            text-align: center;
-            padding: 50px 20px 30px 20px;
-        }
-        #title {
-            font-size: 26px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-            color: #4d433a;
-        }
-        #title a {
-            color: #4d433a;
-            text-decoration: none;
-        }
-        #blog-description {
-            font-size: 13px;
-            color: #73685d;
-            margin: 0;
-        }
-
         /* 2カラムレイアウト */
         #content {
             display: flex;
             gap: 24px;
             align-items: flex-start;
+            padding-top: 40px;
         }
 
         /* 左側：メインエリア */
@@ -63,7 +43,25 @@
             box-shadow: 0 1px 4px rgba(0,0,0,0.05);
         }
 
-        /* 免責事項テキストのスタイル */
+        /* メインエリア最上部のブログタイトル */
+        .main-entry-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+        }
+        .main-blog-title {
+            font-size: 26px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #4d433a;
+        }
+        .main-blog-description {
+            font-size: 13px;
+            color: #73685d;
+            margin: 0;
+        }
+
+        /* ブログタイトル直下の免責事項テキスト */
         .disclaimer-text {
             font-size: 14px;
             color: #666666;
@@ -71,7 +69,7 @@
             line-height: 1.6;
         }
 
-        /* 実際のおしらせ枠のスタイル（背景薄グレー・ドット線） */
+        /* 免責事項直下のお知らせ枠 */
         .announcement-box {
             background-color: #f9f9f9;
             border: 1px dashed #cccccc;
@@ -100,18 +98,19 @@
             display: inline-block;
         }
 
+        /* セクション見出し */
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #111111;
+        }
+
         /* 右側：サイドバー */
         #box2 {
             width: 300px;
             flex-shrink: 0;
-        }
-
-        /* 記事タイトルの装飾 */
-        .entry-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin: 0 0 20px 0;
-            color: #111111;
         }
 
         /* サイドバーモジュール */
@@ -160,67 +159,62 @@
 <body>
 <div id="container">
 
-    <!-- ブログヘッダー部 -->
-    <header id="blog-title">
-        <div id="blog-title-inner">
-            <h1 id="title"><a href="#">Apple 製品について 旧 iphoneappleのブログ</a></h1>
-            <p id="blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
-        </div>
-    </header>
-
     <!-- 2カラムコンテンツ部 -->
     <div id="content">
         
         <!-- 左側：メインコンテンツ -->
         <main id="main">
             
-            <article class="entry">
-                <h2 class="entry-title">おすすめアイテム＆人気記事ランキング</h2>
-                <div class="entry-content">
-                    
-                    <!-- 1. 免責事項テキストの再現 -->
-                    <div class="disclaimer-text">
-                        当ブログ「Apple 製品について（旧：iphoneappleのブログ）」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
-                    </div>
+            <!-- 1. ブログタイトル -->
+            <div class="main-entry-header">
+                <h1 class="main-blog-title">Apple 製品について 旧 iphoneappleのブログ</h1>
+                <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
+            </div>
 
-                    <!-- 2. お知らせ枠の再現（画像通りの文章と色合い） -->
-                    <div class="announcement-box">
-                        <div class="announcement-title">お知らせ</div>
-                        
-                        <div class="announcement-item">
-                            <span class="announcement-date">2026/11/4</span> 当ブログのPVが開設してから1ヶ月半で1182回を超えました👏
-                        </div>
-                        
-                        <div class="announcement-item">
-                            <span class="announcement-date">2026/11/1</span> PV1000達成！👏
-                        </div>
-                    </div>
-
-                    <h3 style="font-size: 18px; margin-top: 30px;">人気記事ランキング</h3>
-                    <p>まずはここから！当ブログで特にアクセスの多い一押し記事です。</p>
-                    <ol>
-                        <li>
-                            <strong>おすすめ記事のタイトル（1位）</strong>
-                            <p>記事の簡単な紹介文をここに入れます。</p>
-                        </li>
-                        <li>
-                            <strong>おすすめ記事のタイトル（2位）</strong>
-                            <p>記事の簡単な紹介文をここに入れます。</p>
-                        </li>
-                    </ol>
-
-                    <h3 style="font-size: 18px; margin-top: 30px;">本気のおすすめ愛用アイテム</h3>
-                    <p>実際に使ってみて本当に良かったと感じる一押しのモノたちです。</p>
-                    <ul>
-                        <li>
-                            <strong>おすすめ商品・サービスの名称</strong>
-                            <p>商品の特徴や、実際に使って感じたメリットをここに詳しく記入します。</p>
-                        </li>
-                    </ul>
-
+            <div class="entry-content">
+                
+                <!-- 2. 【ブログタイトル真下】免責事項テキスト -->
+                <div class="disclaimer-text">
+                    当ブログ「Apple 製品について（旧：iphoneapple의 블로그）」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
                 </div>
-            </article>
 
+                <!-- 3. 【免責事項直下】お知らせ枠 -->
+                <div class="announcement-box">
+                    <div class="announcement-title">お知らせ</div>
+                    
+                    <div class="announcement-item">
+                        <span class="announcement-date">2026/11/4</span> 当ブログのPVが開設してから1ヶ月半で1182回を超えました👏
+                    </div>
+                    
+                    <div class="announcement-item">
+                        <span class="announcement-date">2026/11/1</span> PV1000達成！👏
+                    </div>
+                </div>
+
+                <!-- ここから下が通常の記事エリアになります -->
+                <h2 class="section-title">人気記事ランキング</h2>
+                <p>まずはここから！当ブログで特にアクセスの多い一押し記事です。</p>
+                <ol>
+                    <li>
+                        <strong>おすすめ記事のタイトル（1位）</strong>
+                        <p>記事の簡単な紹介文をここに入れます。</p>
+                    </li>
+                    <li>
+                        <strong>おすすめ記事のタイトル（2位）</strong>
+                        <p>記事の簡単な紹介文をここに入れます。</p>
+                    </li>
+                </ol>
+
+                <h2 class="section-title">本気のおすすめ愛用アイテム</h2>
+                <p>実際に使ってみて本当に良かったと感じる一押しのモノたちです。</p>
+                <ul>
+                    <li>
+                        <strong>おすすめ商品・サービスの名称</strong>
+                        <p>商品の特徴や、実際に使って感じたメリットをここに詳しく記入します。</p>
+                    </li>
+                </ul>
+
+            </div>
         </main>
 
         <!-- 右側：サイドバー -->
