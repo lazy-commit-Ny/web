@@ -4,284 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple 製品についての紹介サイト</title>
-    <style>
-        /* ブログ全体の背景色を温かみのある優しいミルクティベージュに指定 */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-            background-color: #E8DCcc;
-            color: #333333;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-        }
-
-        #container {
-            max-width: 1040px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        a {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-
-        /* 共通ヘッダー（背景透過・中央寄せ） */
-        .main-entry-header {
-            text-align: center;
-            padding: 40px 0 20px 0;
-        }
-        .main-blog-title {
-            font-size: 26px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-            color: #4d433a;
-        }
-        .main-blog-description {
-            font-size: 13px;
-            color: #73685d;
-            margin: 0;
-        }
-
-        /* 免責事項テキスト（背景透過・余白調整） */
-        .disclaimer-text {
-            font-size: 14px;
-            color: #555555;
-            margin: 20px auto 25px auto;
-            max-width: 1000px;
-            line-height: 1.6;
-            padding: 0 10px;
-        }
-
-        /* お知らせ枠（白地枠・ドット線・幅広仕様） */
-        .announcement-box {
-            background-color: #ffffff;
-            border: 1px dashed #cccccc;
-            border-radius: 8px;
-            padding: 15px 20px;
-            margin: 0 auto 25px auto;
-            max-width: 1000px;
-            font-size: 14px;
-        }
-        .announcement-title {
-            font-size: 11px;
-            color: #999999;
-            margin-bottom: 8px;
-        }
-        .announcement-item {
-            margin-bottom: 8px;
-        }
-        .announcement-item:last-child {
-            margin-bottom: 0;
-        }
-        .announcement-date {
-            background-color: #dddddd;
-            color: #333333;
-            padding: 2px 6px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-right: 8px;
-            display: inline-block;
-        }
-
-        /* 楽天アフィリエイト広告枠（お知らせの下に配置） */
-        .rakuten-ad-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 35px;
-            background-color: transparent;
-        }
-
-        /* 2カラムレイアウト（ここから下が白枠化されます） */
-        #content {
-            display: flex;
-            gap: 24px;
-            align-items: flex-start;
-        }
-
-        /* 左側：メインエリア（ここを独立した白地枠に変更） */
-        #main {
-            flex: 1;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-        }
-
-        /* 記事の要約・目次フレーム（青枠） */
-        .entry-summary-box {
-            border: 2px solid #0056b3;
-            border-radius: 4px;
-            padding: 20px;
-            margin-top: 15px;
-            margin-bottom: 20px;
-            background-color: #ffffff;
-        }
-        .entry-summary-title {
-            text-align: center;
-            font-weight: bold;
-            color: #0056b3;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-        .entry-summary-text {
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        .entry-toc {
-            margin: 0;
-            padding-left: 20px;
-            font-size: 14px;
-        }
-        .entry-toc li {
-            margin-bottom: 5px;
-        }
-
-        /* セクション見出し */
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #111111;
-        }
-
-        /* 右側：サイドバー（独立した白地枠） */
-        #box2 {
-            width: 300px;
-            flex-shrink: 0;
-        }
-
-        /* サイドバーモジュール */
-        .hatena-module {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-        }
-        .hatena-module-title {
-            font-size: 15px;
-            font-weight: bold;
-            margin-top: 0;
-            margin-bottom: 15px;
-            color: #4d433a;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .hatena-module-title::before {
-            content: "●";
-            color: #8a6343;
-            font-size: 12px;
-        }
-
-        /* フッターメニューのスタイル */
-        #footer-menu {
-            text-align: center;
-            padding: 15px 0;
-            font-size: 14px;
-            color: #666;
-            margin-top: 40px;
-            border-top: 1px dashed rgba(0, 0, 0, 0.1);
-        }
-        #footer-menu a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-        #footer-menu a:hover {
-            text-decoration: underline;
-        }
-
-        /* フッター通常エリア */
-        #footer {
-            text-align: center;
-            padding: 20px 20px 40px 20px;
-            font-size: 13px;
-            color: #73685d;
-        }
-
-        /* Cookie同意バナーのスタイル */
-        .simple-cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(34, 34, 34, 0.95);
-            color: #ffffff;
-            padding: 10px 20px;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 99999;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
-        .simple-cookie-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        @media (min-width: 768px) {
-            .simple-cookie-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                gap: 20px;
-            }
-        }
-        .simple-cookie-text {
-            font-size: 13px;
-            line-height: 1.5;
-            margin: 0;
-            flex-grow: 1;
-        }
-        .simple-cookie-link {
-            color: #38bdf8;
-            text-decoration: underline;
-        }
-        .simple-cookie-link:hover {
-            color: #7dd3fc;
-        }
-        .simple-cookie-buttons {
-            display: flex;
-            gap: 8px;
-            flex-shrink: 0;
-            justify-content: flex-end;
-        }
-        .btn-simple {
-            padding: 6px 16px;
-            font-size: 13px;
-            font-weight: bold;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.2s;
-            white-space: nowrap;
-        }
-        .btn-simple-accept {
-            background-color: #007bff;
-            color: #ffffff;
-        }
-        .btn-simple-accept:hover { background-color: #0056b3; }
-        .btn-simple-reject {
-            background-color: #555555;
-            color: #ffffff;
-        }
-        .btn-simple-reject:hover { background-color: #333333; }
-
-        /* レスポンシブ */
-        @media (max-width: 768px) {
-            #content {
-                flex-direction: column;
-            }
-            #box2 {
-                width: 100%;
-            }
-        }
-    </style>
+    <!-- CSSファイルの読み込み -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="container">
@@ -297,7 +21,7 @@
         当サイト「Apple 製品についての紹介サイト」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
     </div>
 
-    <!-- 3. お知らせ枠（画像通り、幅広のボックスとして配置） -->
+    <!-- 3. お知らせ枠 -->
     <div class="announcement-box">
         <div class="announcement-title">お知らせ</div>
         <div class="announcement-item">
@@ -308,23 +32,22 @@
         </div>
     </div>
 
-    <!-- 4. 楽天アフィリエイト広告枠（下地がベージュの部分に配置） -->
+    <!-- 4. 楽天アフィリエイト広告枠 -->
     <div class="rakuten-ad-container">
         <!-- ここにご自身の楽天アフィリエイトバナーコード等を挿入してください -->
     </div>
 
-    <!-- 5. 2カラムコンテンツ部（ここから下が画像通りの白枠ボックスになります） -->
+    <!-- 5. 2カラムコンテンツ部 -->
     <div id="content">
         
-        <!-- 左側：メインコンテンツ（白地エリア） -->
+        <!-- 左側：メインコンテンツ -->
         <main id="main">
-            
             <div style="margin-bottom: 10px;">
                 <span style="color: #666; font-size: 14px; font-weight: bold;">2026-11-04</span>
                 <h2 style="font-size: 22px; margin: 5px 0 15px 0; font-weight: bold;">iPhone買いました！</h2>
             </div>
 
-            <!-- 【30秒でわかる記事の要約】フレーム（青枠） -->
+            <!-- 【30秒でわかる記事の要約】フレーム -->
             <div class="entry-summary-box">
                 <p class="entry-summary-title">【30秒でわかる記事の要約】</p>
                 <p class="entry-summary-text">
@@ -337,12 +60,10 @@
                     <li><a href="#">4. 基本性能とコスパ：256GBスタートで価格維持</a></li>
                 </ul>
             </div>
-
         </main>
 
-        <!-- 右側：サイドバー（白地エリア） -->
+        <!-- 右側：サイドバー -->
         <aside id="box2">
-            
             <!-- プロフィール -->
             <div class="hatena-module hatena-module-profile">
                 <h2 class="hatena-module-title">プロフィール</h2>
@@ -361,16 +82,15 @@
                 </div>
             </div>
 
-            <!-- 検索 -->
+            <!-- 検索機能 -->
             <div class="hatena-module hatena-module-search-box">
                 <h2 class="hatena-module-title">検索</h2>
                 <div class="hatena-module-body">
                     <form action="https://iphoneapple.hatenablog.com/search" method="get">
-                        <input type="search" name="q" placeholder="記事を検索" style="width: 85%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;">
+                        <input type="search" name="q" placeholder="記事を検索" class="search-input">
                     </form>
                 </div>
             </div>
-            
         </aside>
 
     </div>
@@ -392,7 +112,7 @@
         <p>&copy; 2026 Apple 製品についての紹介サイト. All Rights Reserved.</p>
     </footer>
 
-    <!-- Cookie同意バナー（最初のみ画面下部に固定表示） -->
+    <!-- Cookie同意バナー -->
     <div id="simple-cookie-banner" class="simple-cookie-banner" style="display: none;">
         <div class="simple-cookie-content">
             <p class="simple-cookie-text">
@@ -410,32 +130,7 @@
 
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('user-cookie-consent')) {
-        return;
-    }
-
-    const banner = document.getElementById('simple-cookie-banner');
-    if (banner) {
-        banner.style.display = 'block';
-    }
-
-    document.getElementById('simple-consent-accept').addEventListener('click', () => {
-        localStorage.setItem('user-cookie-consent', 'accepted');
-        banner.remove();
-    });
-
-    document.getElementById('simple-consent-reject').addEventListener('click', () => {
-        const result = confirm('本当にいいのですか？');
-        if (result) {
-            window.close();
-            setTimeout(() => {
-                window.location.href = 'about:blank';
-            }, 100);
-        }
-    });
-});
-</script>
+<!-- JavaScriptファイルの読み込み -->
+<script src="main.js"></script>
 </body>
 </html>
