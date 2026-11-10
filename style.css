@@ -1,0 +1,311 @@
+/* ブログ全体の背景色 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    background-color: #E8DCcc;
+    color: #333333;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* 共通ヘッダー */
+.main-entry-header {
+    text-align: center;
+    padding: 40px 0 20px 0;
+}
+
+.main-blog-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #4d433a;
+}
+
+.main-blog-description {
+    font-size: 13px;
+    color: #73685d;
+    margin: 0;
+}
+
+/* 免責事項テキスト */
+.disclaimer-text {
+    font-size: 14px;
+    color: #555555;
+    margin: 20px auto 25px auto;
+    max-width: 1000px;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* お知らせ枠 */
+.announcement-box {
+    background-color: #ffffff;
+    border: 1px dashed #cccccc;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 0 auto 25px auto;
+    max-width: 1000px;
+    font-size: 14px;
+}
+
+.announcement-title {
+    font-size: 11px;
+    color: #999999;
+    margin-bottom: 8px;
+}
+
+.announcement-item {
+    margin-bottom: 8px;
+}
+
+.announcement-item:last-child {
+    margin-bottom: 0;
+}
+
+.announcement-date {
+    background-color: #dddddd;
+    color: #333333;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* 楽天アフィリエイト広告枠 */
+.rakuten-ad-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    background-color: transparent;
+}
+
+/* 2カラムレイアウト */
+#content {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* メインエリア */
+#main {
+    flex: 1;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* 記事要約ボックス */
+.entry-summary-box {
+    border: 2px solid #0056b3;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.entry-summary-title {
+    text-align: center;
+    font-weight: bold;
+    color: #0056b3;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.entry-summary-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.entry-toc {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.entry-toc li {
+    margin-bottom: 5px;
+}
+
+/* セクション見出し */
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #111111;
+}
+
+/* サイドバー */
+#box2 {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.hatena-module {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.hatena-module-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #4d433a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hatena-module-title::before {
+    content: "●";
+    color: #8a6343;
+    font-size: 12px;
+}
+
+/* 検索インプット装飾 */
+.search-input {
+    width: 85%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* フッター */
+#footer-menu {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #666;
+    margin-top: 40px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+#footer-menu a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+#footer-menu a:hover {
+    text-decoration: underline;
+}
+
+#footer {
+    text-align: center;
+    padding: 20px 20px 40px 20px;
+    font-size: 13px;
+    color: #73685d;
+}
+
+/* Cookie同意バナー */
+.simple-cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(34, 34, 34, 0.95);
+    color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.simple-cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 768px) {
+    .simple-cookie-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.simple-cookie-text {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.simple-cookie-link {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+.simple-cookie-link:hover {
+    color: #7dd3fc;
+}
+
+.simple-cookie-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    justify-content: flex-end;
+}
+
+.btn-simple {
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn-simple-accept {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-simple-accept:hover {
+    background-color: #0056b3;
+}
+
+.btn-simple-reject {
+    background-color: #555555;
+    color: #ffffff;
+}
+
+.btn-simple-reject:hover {
+    background-color: #333333;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+    }
+    #box2 {
+        width: 100%;
+    }
+}
