@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple 製品についての紹介サイト</title>
+    <title>Apple 製品についての紹介サイト | iPhone・Mac・iPadレビュー</title>
+    <meta name="description" content="iPhone、Mac、iPadなどのApple製品について実機レビューや最新情報を分かりやすく発信する個人ガジェットブログです。">
     <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="rszNSTSWiMbgU9SuflYIxx4IknNAJgg-La4BSUYQbHo" />
@@ -11,30 +12,38 @@
 <body>
 <div id="container">
 
-    <!-- 1. ブログタイトル（背景ベージュの上に配置） -->
-    <div class="main-entry-header">
-        <h1 class="main-blog-title">Apple 製品についての紹介サイト</h1>
+    <!-- 1. ブログヘッダー -->
+    <header class="main-entry-header">
+        <h1 class="main-blog-title">
+            <a href="./" class="blog-title-link">Apple 製品についての紹介サイト</a>
+        </h1>
         <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
-    </div>
-    <!-- admax -->
-<script src="https://adm.shinobi.jp/s/d48e283277f6b50c7db0fb8957775bb5"></script>
-<!-- admax -->
+    </header>
 
-    <!-- 2. 免責事項テキスト（背景ベージュの上に配置） -->
-    <div class="disclaimer-text">
-        当サイト「Apple 製品についての紹介サイト」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
+    <!-- 広告枠（admax） -->
+    <div class="ad-banner-top">
+        <script src="https://adm.shinobi.jp/s/d48e283277f6b50c7db0fb8957775bb5"></script>
     </div>
+
+    <!-- 2. 免責事項テキスト -->
+    <aside class="disclaimer-text" aria-label="免責事項">
+        当サイト「Apple 製品についての紹介サイト」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
+    </aside>
 
     <!-- 3. お知らせ枠 -->
-    <div class="announcement-box">
-        <div class="announcement-title">お知らせ</div>
-        <div class="announcement-item">
-            <span class="announcement-date">2026/11/4</span> 当ブログのPVが開設してから1ヶ月半で1182回を超えました👏
-        </div>
-        <div class="announcement-item">
-            <span class="announcement-date">2026/11/1</span> PV1000達成！👏
-        </div>
-    </div>
+    <section class="announcement-box" aria-labelledby="announcement-heading">
+        <h2 id="announcement-heading" class="announcement-title">お知らせ</h2>
+        <ul class="announcement-list">
+            <li class="announcement-item">
+                <time datetime="2026-11-04" class="announcement-date">2026/11/4</time>
+                <span>当ブログのPVが開設してから1ヶ月半で1182回を超えました👏</span>
+            </li>
+            <li class="announcement-item">
+                <time datetime="2026-11-01" class="announcement-date">2026/11/1</time>
+                <span>PV1000達成！👏</span>
+            </li>
+        </ul>
+    </section>
 
     <!-- 4. 楽天アフィリエイト広告枠 -->
     <div class="rakuten-ad-container">
@@ -46,69 +55,108 @@
         
         <!-- 左側：メインコンテンツ -->
         <main id="main">
-            <div style="margin-bottom: 10px;">
-                <span style="color: #666; font-size: 14px; font-weight: bold;">2026-11-04</span>
-                <h2 style="font-size: 22px; margin: 5px 0 15px 0; font-weight: bold;">iPhone買いました！</h2>
-            </div>
+            <article class="entry-article">
+                <header class="entry-header">
+                    <time datetime="2026-11-04" class="entry-date">2026-11-04</time>
+                    <h2 class="entry-title">iPhone買いました！</h2>
+                </header>
 
-            <!-- 【30秒でわかる記事の要約】フレーム -->
-            <div class="entry-summary-box">
-                <p class="entry-summary-title">【30秒でわかる記事の要約】</p>
-                <p class="entry-summary-text">
-                    iPhone 17（無印）は、従来の標準モデルの常識を覆す進化を遂げました。最大の見どころは、ついに標準モデルにも搭載された<strong>「最大120HzのProMotionディスプレイ」</strong>です。画面サイズも6.3インチへ大型化し、最小ストレージが256GBに倍増。上位モデル譲りの滑らかな操作感と高コスパを両立した、今最も選ぶべき大本命モデルの魅力を徹底解説します。
-                </p>
-                <ul class="entry-toc">
-                    <li><a href="#">1. 筆者もついに新型iPhoneを購入！</a></li>
-                    <li><a href="#">2. 画面の滑らかさが進化：待望の120Hz対応へ</a></li>
-                    <li><a href="#">3. ディスプレイとデザイン：6.3インチへ大型化</a></li>
-                    <li><a href="#">4. 基本性能とコスパ：256GBスタートで価格維持</a></li>
-                </ul>
-            </div>
+                <!-- 【30秒でわかる記事の要約】フレーム -->
+                <div class="entry-summary-box">
+                    <p class="entry-summary-title">【30秒でわかる記事の要約】</p>
+                    <p class="entry-summary-text">
+                        iPhone 17（無印）は、従来の標準モデルの常識を覆す進化を遂げました。最大の見どころは、ついに標準モデルにも搭載された<strong>「最大120HzのProMotionディスプレイ」</strong>です。画面サイズも6.3インチへ大型化し、最小ストレージが256GBに倍増。上位モデル譲りの滑らかな操作感と高コスパを両立した、今最も選ぶべき大本命モデルの魅力を徹底解説します。
+                    </p>
+                    <nav aria-label="記事の目次">
+                        <ul class="entry-toc">
+                            <li><a href="#section1">1. 筆者もついに新型iPhoneを購入！</a></li>
+                            <li><a href="#section2">2. 画面の滑らかさが進化：待望の120Hz対応へ</a></li>
+                            <li><a href="#section3">3. ディスプレイとデザイン：6.3インチへ大型化</a></li>
+                            <li><a href="#section4">4. 基本性能とコスパ：256GBスタートで価格維持</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- 記事本文エリア（目次と連動） -->
+                <div class="entry-content">
+                    <section id="section1">
+                        <h3>1. 筆者もついに新型iPhoneを購入！</h3>
+                        <p>ここに導入や開封の感想などを記述します。</p>
+                    </section>
+
+                    <section id="section2">
+                        <h3>2. 画面の滑らかさが進化：待望の120Hz対応へ</h3>
+                        <p>スクロールの滑らかさやProMotionディスプレイの使用感を記述します。</p>
+                    </section>
+
+                    <section id="section3">
+                        <h3>3. ディスプレイとデザイン：6.3インチへ大型化</h3>
+                        <p>ベゼルの細さや持ちやすさ、画面の見やすさについて記述します。</p>
+                    </section>
+
+                    <section id="section4">
+                        <h3>4. 基本性能とコスパ：256GBスタートで価格維持</h3>
+                        <p>容量アップのメリットと価格に対するコストパフォーマンスのまとめを記述します。</p>
+                    </section>
+                </div>
+            </article>
         </main>
 
         <!-- 右側：サイドバー -->
         <aside id="box2">
             <!-- プロフィール -->
-            <div class="hatena-module hatena-module-profile">
+            <section class="hatena-module hatena-module-profile">
                 <h2 class="hatena-module-title">プロフィール</h2>
                 <div class="hatena-module-body">
                     <p><strong>管理人：筑波山</strong></p>
                     <p>メインブログも運営しています。Apple製品などの情報を発信中！</p>
-                    <p><a href="https://iphoneapple.hatenablog.com/" target="_blank">https://iphoneapple.hatenablog.com/</a></p>
+                    <p>
+                        <a href="https://iphoneapple.hatenablog.com/" target="_blank" rel="noopener noreferrer">
+                            メインブログはこちら（はてなブログ）
+                        </a>
+                    </p>
                 </div>
-            </div>
+            </section>
 
             <!-- アクセス数 -->
-            <div class="hatena-module hatena-module-entries-access">
+            <section class="hatena-module hatena-module-entries-access">
                 <h2 class="hatena-module-title">メインアクセス数</h2>
                 <div class="hatena-module-body">
-                    <p>今日: 34<br>週間: 276<br>月間: 292<br>合計: 1,361</p>
+                    <ul class="access-stats-list">
+                        <li>今日: <strong>34</strong></li>
+                        <li>週間: <strong>276</strong></li>
+                        <li>月間: <strong>292</strong></li>
+                        <li>合計: <strong>1,361</strong></li>
+                    </ul>
                 </div>
-            </div>
+            </section>
 
             <!-- 検索機能 -->
-            <div class="hatena-module hatena-module-search-box">
+            <section class="hatena-module hatena-module-search-box">
                 <h2 class="hatena-module-title">検索</h2>
                 <div class="hatena-module-body">
-                    <form action="https://iphoneapple.hatenablog.com/search" method="get">
-                        <input type="search" name="q" placeholder="記事を検索" class="search-input">
+                    <form action="https://iphoneapple.hatenablog.com/search" method="get" class="search-form">
+                        <input type="search" name="q" placeholder="記事を検索" aria-label="記事を検索" class="search-input" required>
+                        <button type="submit" class="search-button">検索</button>
                     </form>
                 </div>
-            </div>
+            </section>
         </aside>
 
     </div>
 
     <!-- フッターメニュー -->
-    <div id="footer-menu">
-        | <a href="https://iphoneapple.hatenablog.com/">TOP</a> 
-        | <a href="https://iphoneapple.hatenablog.com/archive/category/iPhone">iPhone</a> 
-        | <a href="https://iphoneapple.hatenablog.com/archive/category/Apple%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88">Appleイベント</a> 
-        | <a href="https://iphoneapple.hatenablog.com/entry/profile">運営者情報</a> 
-        | <a href="https://iphoneapple.hatenablog.com/entry/%E8%A6%8F%E7%B4%84">サイトのご利用にあたって</a> 
-        | <a href="https://iphoneapple.hatenablog.com/entry/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a> 
-        | <a href="https://iphoneapple.hatenablog.com/entry/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ</a> |
-    </div>
+    <nav id="footer-menu" aria-label="フッターナビゲーション">
+        <ul class="footer-nav-list">
+            <li><a href="https://iphoneapple.hatenablog.com/">TOP</a></li>
+            <li><a href="https://iphoneapple.hatenablog.com/archive/category/iPhone">iPhone</a></li>
+            <li><a href="https://iphoneapple.hatenablog.com/archive/category/Apple%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88">Appleイベント</a></li>
+            <li><a href="https://iphoneapple.hatenablog.com/entry/profile">運営者情報</a></li>
+            <li><a href="https://iphoneapple.hatenablog.com/entry/%E8%A6%8F%E7%B4%84">サイトのご利用にあたって</a></li>
+            <li><a href="https://iphoneapple.hatenablog.com/entry/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a></li>
+            <li><a href="https://iphoneapple.hatenablog.com/entry/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ</a></li>
+        </ul>
+    </nav>
 
     <!-- フッター通常エリア -->
     <footer id="footer">
@@ -116,7 +164,7 @@
     </footer>
 
     <!-- Cookie同意バナー -->
-    <div id="simple-cookie-banner" class="simple-cookie-banner" style="display: none;">
+    <div id="simple-cookie-banner" class="simple-cookie-banner" role="dialog" aria-live="polite" aria-label="Cookieの使用に関する同意" style="display: none;">
         <div class="simple-cookie-content">
             <p class="simple-cookie-text">
                 当サイトではCookie等を使用しています。詳細は
@@ -125,8 +173,8 @@
                 データの収集および利用に同意いただけますか？
             </p>
             <div class="simple-cookie-buttons">
-                <button class="btn-simple btn-simple-reject" id="simple-consent-reject">同意しない</button>
-                <button class="btn-simple btn-simple-accept" id="simple-consent-accept">同意する</button>
+                <button type="button" class="btn-simple btn-simple-reject" id="simple-consent-reject">同意しない</button>
+                <button type="button" class="btn-simple btn-simple-accept" id="simple-consent-accept">同意する</button>
             </div>
         </div>
     </div>
