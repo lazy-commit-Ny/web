@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テスト記事ページ | Apple 製品についての紹介サイト</title>
+    <meta name="description" content="テスト用の記事ページです。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="container">
+
+    <!-- ここに header.html が読み込まれます -->
+    <div id="header-placeholder"></div>
+
+    <!-- 2カラムコンテンツ部 -->
+    <div id="content">
+        
+        <!-- 左側：メインコンテンツ（テスト記事の中身） -->
+        <main id="main">
+            <article class="entry-article">
+                <header class="entry-header">
+                    <time datetime="2026-11-19" class="entry-date">2026-11-19</time>
+                    <h2 class="entry-title">テスト記事です！パーツ分割の動作確認</h2>
+                </header>
+
+                <div class="entry-content">
+                    <p>これは2ページ目のテスト記事です。</p>
+                    <p>このページでも、上部のヘッダー・右側のサイドバー・下部のフッターが自動で読み込まれていれば大成功です！</p>
+                    <p><a href="./">← トップページ（index.html）に戻る</a></p>
+                </div>
+            </article>
+        </main>
+
+        <!-- 右側：サイドバー（ここに sidebar.html が読み込まれます） -->
+        <aside id="box2"></aside>
+
+    </div>
+
+    <!-- ここに footer.html が読み込まれます -->
+    <div id="footer-placeholder"></div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
