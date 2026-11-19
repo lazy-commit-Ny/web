@@ -12,17 +12,20 @@ async function loadPart(id, file) {
     }
 }
 
-// 最新記事のプレビュー一覧を生成する関数
+// 最新記事のプレビュー一覧を生成する関数（最大10件）
 async function loadPostPreviews() {
     const container = document.getElementById('post-list-container');
-    if (!container) return; // 記事個別ページでは何もしない
+    if (!container) return;
 
     try {
         const response = await fetch('posts.json');
         if (!response.ok) throw new Error('記事データの取得に失敗');
         const posts = await response.json();
 
-        container.innerHTML = posts.map(post => `
+        // 先頭から最大10件だけを取り出す
+        const latestPosts = posts.slice(0, 10);
+
+        container.innerHTML = latestPosts.map(post => `
             <article class="post-preview-card">
                 <div class="post-preview-meta">
                     <time datetime="${post.date}" class="post-preview-date">${post.date}</time>
