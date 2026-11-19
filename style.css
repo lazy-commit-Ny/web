@@ -340,3 +340,82 @@ a {
 .search-input {
     flex: 1;
 }
+/* 最新記事一覧のプレビューカード */
+.section-heading {
+    font-size: 20px;
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #333;
+}
+
+.post-preview-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 18px;
+    transition: box-shadow 0.2s ease;
+}
+
+.post-preview-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.post-preview-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.post-preview-date {
+    color: #666;
+    font-weight: bold;
+}
+
+.post-preview-category {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.post-preview-title {
+    font-size: 19px;
+    margin: 0 0 10px 0;
+}
+
+.post-preview-title a {
+    color: #222;
+    text-decoration: none;
+}
+
+.post-preview-title a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.post-preview-summary {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+}
+
+.post-preview-more {
+    text-align: right;
+}
+
+.read-more-btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
