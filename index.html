@@ -5,52 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple 製品についての紹介サイト | iPhone・Mac・iPadレビュー</title>
     <meta name="description" content="iPhone、Mac、iPadなどのApple製品について実機レビューや最新情報を分かりやすく発信する個人ガジェットブログです。">
-    <!-- CSSファイルの読み込み -->
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="rszNSTSWiMbgU9SuflYIxx4IknNAJgg-La4BSUYQbHo" />
 </head>
 <body>
 <div id="container">
 
-    <!-- 1. ブログヘッダー -->
-    <header class="main-entry-header">
-        <h1 class="main-blog-title">
-            <a href="./" class="blog-title-link">Apple 製品についての紹介サイト</a>
-        </h1>
-        <p class="main-blog-description">このブログでは、iPhone、Mac、iPad、などのApple製品について書いていきます。</p>
-    </header>
+    <!-- ここに header.html が読み込まれます -->
+    <div id="header-placeholder"></div>
 
     <!-- 広告枠（admax） -->
     <div class="ad-banner-top">
         <script src="https://adm.shinobi.jp/s/d48e283277f6b50c7db0fb8957775bb5"></script>
     </div>
 
-    <!-- 2. 免責事項テキスト -->
-    <aside class="disclaimer-text" aria-label="免責事項">
-        当サイト「Apple 製品についての紹介サイト」は、個人が運営する独立したガジェットブログであり、米国Apple Inc.、アップルジャパン株式会社、および各国のApple関連子会社などとは一切関係ありません。ブログ内に掲載されている製品名、ロゴ、商標等は、すべて各社の商標または登録商標です。
-    </aside>
-
-    <!-- 3. お知らせ枠 -->
-    <section class="announcement-box" aria-labelledby="announcement-heading">
-        <h2 id="announcement-heading" class="announcement-title">お知らせ</h2>
-        <ul class="announcement-list">
-            <li class="announcement-item">
-                <time datetime="2026-11-04" class="announcement-date">2026/11/4</time>
-                <span>当ブログのPVが開設してから1ヶ月半で1182回を超えました👏</span>
-            </li>
-            <li class="announcement-item">
-                <time datetime="2026-11-01" class="announcement-date">2026/11/1</time>
-                <span>PV1000達成！👏</span>
-            </li>
-        </ul>
-    </section>
-
-    <!-- 4. 楽天アフィリエイト広告枠 -->
+    <!-- 楽天アフィリエイト広告枠 -->
     <div class="rakuten-ad-container">
-        <!-- ここにご自身の楽天アフィリエイトバナーコード等を挿入してください -->
+        <!-- 楽天アフィリエイトコード -->
     </div>
 
-    <!-- 5. 2カラムコンテンツ部 -->
+    <!-- 2カラムコンテンツ部 -->
     <div id="content">
         
         <!-- 左側：メインコンテンツ -->
@@ -61,7 +35,6 @@
                     <h2 class="entry-title">iPhone買いました！</h2>
                 </header>
 
-                <!-- 【30秒でわかる記事の要約】フレーム -->
                 <div class="entry-summary-box">
                     <p class="entry-summary-title">【30秒でわかる記事の要約】</p>
                     <p class="entry-summary-text">
@@ -77,11 +50,10 @@
                     </nav>
                 </div>
 
-                <!-- 記事本文エリア（目次と連動） -->
                 <div class="entry-content">
                     <section id="section1">
                         <h3>1. 筆者もついに新型iPhoneを購入！</h3>
-                        <p>ここに導入や開封の感想などを記述します。</p>
+                        <p>ここに本文を書きます。</p>
                     </section>
 
                     <section id="section2">
@@ -102,86 +74,16 @@
             </article>
         </main>
 
-        <!-- 右側：サイドバー -->
-        <aside id="box2">
-            <!-- プロフィール -->
-            <section class="hatena-module hatena-module-profile">
-                <h2 class="hatena-module-title">プロフィール</h2>
-                <div class="hatena-module-body">
-                    <p><strong>管理人：筑波山</strong></p>
-                    <p>メインブログも運営しています。Apple製品などの情報を発信中！</p>
-                    <p>
-                        <a href="https://iphoneapple.hatenablog.com/" target="_blank" rel="noopener noreferrer">
-                            メインブログはこちら（はてなブログ）
-                        </a>
-                    </p>
-                </div>
-            </section>
-
-            <!-- アクセス数 -->
-            <section class="hatena-module hatena-module-entries-access">
-                <h2 class="hatena-module-title">メインアクセス数</h2>
-                <div class="hatena-module-body">
-                    <ul class="access-stats-list">
-                        <li>今日: <strong>34</strong></li>
-                        <li>週間: <strong>276</strong></li>
-                        <li>月間: <strong>292</strong></li>
-                        <li>合計: <strong>1,361</strong></li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- 検索機能 -->
-            <section class="hatena-module hatena-module-search-box">
-                <h2 class="hatena-module-title">検索</h2>
-                <div class="hatena-module-body">
-                    <form action="https://iphoneapple.hatenablog.com/search" method="get" class="search-form">
-                        <input type="search" name="q" placeholder="記事を検索" aria-label="記事を検索" class="search-input" required>
-                        <button type="submit" class="search-button">検索</button>
-                    </form>
-                </div>
-            </section>
-        </aside>
+        <!-- 右側：サイドバー（ここに sidebar.html が読み込まれます） -->
+        <aside id="box2"></aside>
 
     </div>
 
-    <!-- フッターメニュー -->
-    <nav id="footer-menu" aria-label="フッターナビゲーション">
-        <ul class="footer-nav-list">
-            <li><a href="https://iphoneapple.hatenablog.com/">TOP</a></li>
-            <li><a href="https://iphoneapple.hatenablog.com/archive/category/iPhone">iPhone</a></li>
-            <li><a href="https://iphoneapple.hatenablog.com/archive/category/Apple%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88">Appleイベント</a></li>
-            <li><a href="https://iphoneapple.hatenablog.com/entry/profile">運営者情報</a></li>
-            <li><a href="https://iphoneapple.hatenablog.com/entry/%E8%A6%8F%E7%B4%84">サイトのご利用にあたって</a></li>
-            <li><a href="https://iphoneapple.hatenablog.com/entry/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC">プライバシーポリシー</a></li>
-            <li><a href="https://iphoneapple.hatenablog.com/entry/%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">お問い合わせ</a></li>
-        </ul>
-    </nav>
-
-    <!-- フッター通常エリア -->
-    <footer id="footer">
-        <p>&copy; 2026 Apple 製品についての紹介サイト. All Rights Reserved.</p>
-    </footer>
-
-    <!-- Cookie同意バナー -->
-    <div id="simple-cookie-banner" class="simple-cookie-banner" role="dialog" aria-live="polite" aria-label="Cookieの使用に関する同意" style="display: none;">
-        <div class="simple-cookie-content">
-            <p class="simple-cookie-text">
-                当サイトではCookie等を使用しています。詳細は
-                <a href="https://iphoneapple.hatenablog.com/entry/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" class="simple-cookie-link">プライバシーポリシー</a> や
-                <a href="https://iphoneapple.hatenablog.com/entry/%E8%A6%8F%E7%B4%84" class="simple-cookie-link">サイトのご利用にあたって</a> をご確認ください。
-                データの収集および利用に同意いただけますか？
-            </p>
-            <div class="simple-cookie-buttons">
-                <button type="button" class="btn-simple btn-simple-reject" id="simple-consent-reject">同意しない</button>
-                <button type="button" class="btn-simple btn-simple-accept" id="simple-consent-accept">同意する</button>
-            </div>
-        </div>
-    </div>
+    <!-- ここに footer.html が読み込まれます -->
+    <div id="footer-placeholder"></div>
 
 </div>
 
-<!-- JavaScriptファイルの読み込み -->
 <script src="main.js"></script>
 </body>
 </html>
